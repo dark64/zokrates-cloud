@@ -1,0 +1,54 @@
+@import '../../scss/base/colors';
+@import '../../scss/base/typography';
+
+.accordion {
+    color: $primary-color;
+    background: $secondary-color;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    transition: background-color 0.6s ease;
+    font-family: $font-family;
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid darken($secondary-color, 10%);
+        }
+    }
+
+    &:hover, .active {
+        background-color: darken($secondary-color, 10%);
+    }
+
+    &__title {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    &__icon {
+        margin-left: auto;
+        transition: transform 0.6s ease;
+    }
+
+    &__content {
+        background-color: $white-color;
+        overflow: hidden;
+        transition: max-height 0.6s ease;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        padding: 18px;
+    }
+
+    .rotate {
+        transform: rotate(90deg);
+    }
+}

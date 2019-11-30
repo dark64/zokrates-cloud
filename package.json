@@ -1,0 +1,38 @@
+{
+  "name": "zokrates-cloud",
+  "version": "0.0.1",
+  "description": "ZoKrates - React Cloud Playground",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "zokrates",
+    "cloud",
+    "playground"
+  ],
+  "author": "Darko Macesic",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.5",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "react-ace": "^8.0.0",
+    "react-split": "^2.0.7"
+  }
+}

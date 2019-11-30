@@ -1,0 +1,42 @@
+@import '../../scss/base/colors';
+@import '../../scss//base/typography';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    color: $white-color;
+    background: $accent-color;
+
+    &__title {
+        display: inline-block;
+        font-family: $roboto-slab;
+        font-size: 1.3rem;
+        margin-right: 1rem;     
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        i {
+            vertical-align: middle;
+        }
+        
+        &:hover i {
+            transform: translateY(-3px);
+        }
+    }
+}

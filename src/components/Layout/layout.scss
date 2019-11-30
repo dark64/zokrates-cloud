@@ -1,0 +1,22 @@
+@import '../../scss/base/colors';
+
+.gutter {
+    background: $secondary-color !important;
+
+    &:hover {
+        cursor: row-resize;
+    }
+}
+
+.d-flex-col {
+    display: flex;
+    flex-direction: 'column';
+}
+
+.accordion-container {
+    width: 20vw;
+    border-left: 2px solid $secondary-color;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
