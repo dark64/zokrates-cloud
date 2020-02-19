@@ -1,0 +1,34 @@
+@import '../base/colors';
+
+.form-group {
+    display: flex;
+    width: 100%;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .form-field {
+        flex: 1 1 auto;
+        border: 1px solid #d4d6d8;
+        padding: 0.5rem;
+    }
+
+    & > span, .form-field {
+        white-space: nowrap;
+        display: block;
+
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+    }
+
+    & > span {
+        text-align: center;
+        padding: 0.5rem;
+        color: $primary-color;
+        background: #f1f2f3;
+        border: 1px solid #d4d6d8;
+    }
+}

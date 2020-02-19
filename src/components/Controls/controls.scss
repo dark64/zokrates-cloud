@@ -2,6 +2,7 @@
 
 .controls {
     display: block;
-    width: 20vw;
-    border-left: 1px solid $secondary-color;
+    min-width: 350px;
+    border-left: 1px solid #d4d6d8;
+    overflow-y: auto;
 }

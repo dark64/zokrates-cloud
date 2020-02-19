@@ -1,5 +1,5 @@
 const initialState = {
-    code: "def main(private field a, field b) -> (field):\n\tfield result = if a * a == b then 1 else 0 fi\n\treturn result"
+    code: "def main(private field a, field b, field[2] c) -> (field):\n\tfield result = if a * a == b then 1 else 0 fi\n\treturn result"
 };
 
 const reducer = (state, action) => {

@@ -10,7 +10,7 @@ const CompileComponent = () => {
     const consoleContext = useConsoleContext();
 
     const onCompile = () => {
-        consoleContext.dispatch(onMessage('info', `Compiling...`));
+        consoleContext.dispatch(onMessage('info', 'Compiling...'));
         setTimeout(() => {
             try {
                 const artifacts = globalContext.state.zokratesProvider.compile(
@@ -30,7 +30,7 @@ const CompileComponent = () => {
         <Expandable headerText="Compilation" defaultState={true}>
             <div className="text-group">Compiles source code into ZoKrates internal representation of arithmetic circuits.</div>
             <button className="btn btn--primary" onClick={onCompile}>
-                <i className="fa fa-play" aria-hidden="true"></i>Compile
+                <i className="fa fa-refresh" aria-hidden="true"></i>Compile
             </button>
         </Expandable>
     );

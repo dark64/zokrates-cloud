@@ -12,7 +12,7 @@ const CodeEditor = () => {
             name="editor"
             mode="zokrates"
             theme="tomorrow"
-            width="80vw"
+            width="100%"
             height="100%"
             fontSize={18}
             scrollMargin={[5]}
