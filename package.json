@@ -32,7 +32,9 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "ace-mode-zokrates": "^1.0.1",
     "react-ace": "^8.0.0",
-    "react-split": "^2.0.7"
+    "react-split": "^2.0.7",
+    "zokrates-js": "^1.0.20"
   }
 }

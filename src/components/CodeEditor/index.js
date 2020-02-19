@@ -1,10 +1,12 @@
 import React from 'react';
 import AceEditor from 'react-ace';
-import './zokrates-mode';
+import 'ace-mode-zokrates';
 import 'ace-builds/src-noconflict/theme-tomorrow';
+import { useGlobalContext } from '../../store/StoreProvider';
+import { onCodeChange } from '../../store/actions';
 
 const CodeEditor = () => {
-
+    const { state, dispatch } = useGlobalContext();
     return (
         <AceEditor
             name="editor"
@@ -15,7 +17,8 @@ const CodeEditor = () => {
             fontSize={18}
             scrollMargin={[5]}
             editorProps={{ $blockScrolling: true }}
-            defaultValue={"def main() -> (field):\n\treturn 1"}
+            value={state.code}
+            onChange={(value) => dispatch(onCodeChange(value))}
         />
     );
 };

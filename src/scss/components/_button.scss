@@ -14,10 +14,20 @@
     border-radius: .25rem;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,.1);
     cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    i {
+        margin-right: 0.5rem;
+    }
 }
 
 .btn--primary {
     color: #fff;
-    border-color: $accent-color;
-    background-color: $accent-color;
+    border-color: $primary-color;
+    background-color: $primary-color;
+
+    &:hover {
+        border-color: lighten($primary-color, 10%);
+        background-color: lighten($primary-color, 10%);
+    }
 }

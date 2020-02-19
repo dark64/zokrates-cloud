@@ -1,0 +1,32 @@
+@import '../../scss/base/colors';
+
+.expandable {
+    display: block;
+    font-size: 14px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0.8rem;
+        background: $secondary-color;
+        border-bottom: 1px solid #d4d6d8;
+        font-weight: bold;
+        cursor: pointer;
+
+        &--disabled {
+            cursor: not-allowed;
+            color: #929497;
+        }
+    }
+
+    &__body {
+        padding: 1rem;
+    }
+
+    &__chevron {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+    }
+}

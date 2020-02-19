@@ -8,15 +8,17 @@
     }
 }
 
-.d-flex-col {
+.main-layout {
     display: flex;
-    flex-direction: 'column';
-}
+    flex-direction: column;
 
-.accordion-container {
-    width: 20vw;
-    border-left: 2px solid $secondary-color;
-    height: 100%;
-    overflow: scroll;
-    overflow-x: hidden;
+    &__upper { 
+        display: flex; 
+        flex-direction: row; 
+        height: 60vh;
+    }
+
+    &__lower {
+        height: calc(40vh - 48px);
+    }
 }

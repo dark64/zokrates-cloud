@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './components/Header';
-import Layout from './components/Layout/Layout';
+import Layout from './components/Layout';
 import './scss/app.scss';
 import { initialState, reducer } from './store/reducer';
 import { StoreProvider } from './store/StoreProvider';
 
-const App = () => (    
+const App = () => (
     <StoreProvider reducer={reducer} initialState={initialState} >
         <Header />
         <main role="main">

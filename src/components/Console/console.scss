@@ -1,0 +1,61 @@
+@import '../../scss/base/colors';
+@import '../../scss/base/typography';
+
+.console-container {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-color;
+    font-size: 14px;
+    height: inherit;
+
+    &__header {
+        background-color: $secondary-color;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+
+        .title {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(#f8f8f8, #eceff2);
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border: 1px solid #b6b8ba;
+            border-bottom: 0;
+
+            i {
+                margin-right: 0.4rem;
+            }
+        }
+    }
+
+    &__body {
+        padding: 0.6rem 1.2rem;
+        line-height: 1.5;
+        color: $white-color;
+        overflow-y: scroll;
+        height: inherit;
+
+        .log {
+            font-size: 12px;
+            font-family: $roboto-mono;
+
+            &--info {
+                color: $white-color;
+            }
+
+            &--success {
+                color: rgb(9, 200, 89);
+            }
+
+            &--warning {
+                font-weight: bold;
+                color: rgb(241, 142, 60);
+            }
+
+            &--error {
+                font-weight: bold;
+                color: rgb(241, 60, 60);
+            }
+        }
+    }
+}
