@@ -3,6 +3,7 @@ import Expandable from '../../../Expandable';
 import { useGlobalContext } from '../../../../store/StoreProvider';
 import { useConsoleContext, onMessage } from '../../../Console';
 import { onCompilation } from '../../../../store/actions';
+import Stopwatch from '../../../../utils/Stopwatch';
 
 const CompileComponent = () => {
 
@@ -13,13 +14,16 @@ const CompileComponent = () => {
         consoleContext.dispatch(onMessage('info', 'Compiling...'));
         setTimeout(() => {
             try {
+                const stopwatch = Stopwatch();
                 const artifacts = globalContext.state.zokratesProvider.compile(
                     globalContext.state.code, 
                     "main", 
                     () => {}
                 );
                 globalContext.dispatch(onCompilation(artifacts));
-                consoleContext.dispatch(onMessage('success', `Compilation successful (size: ${artifacts.program.length} bytes)`));
+                consoleContext.dispatch(onMessage('success', 
+                    `Compilation successful (size: ${artifacts.program.length} bytes, duration: ${stopwatch.elapsed().toFixed(2)}ms)`)
+                );
             } catch (error) {
                 consoleContext.dispatch(onMessage('error', error.toString()));
             }

@@ -4,6 +4,7 @@ import { useGlobalContext } from '../../../../store/StoreProvider';
 import ExpandableInput from '../../../ExpandableInput';
 import TextInput from '../../../TextInput';
 import { useConsoleContext, onMessage } from '../../../Console';
+import Stopwatch from '../../../../utils/Stopwatch';
 
 const isObject = (value) => typeof value === 'object';
 
@@ -116,11 +117,12 @@ const ComputationComponent = () => {
 
         setTimeout(() => {
             try {
+                const stopwatch = Stopwatch();
                 const result = globalContext.state.zokratesProvider.computeWitness(
                     globalContext.state.artifacts,
                     arguments_
                 );
-                consoleContext.dispatch(onMessage('success', 'Execution successful'));
+                consoleContext.dispatch(onMessage('success', `Execution successful (duration: ${stopwatch.elapsed().toFixed(2)}ms)`));
                 consoleContext.dispatch(onMessage('success', 'Output: \n' + result.output));
             } catch (error) {
                 consoleContext.dispatch(onMessage('error', error.toString()));
