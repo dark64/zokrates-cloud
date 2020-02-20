@@ -29,8 +29,8 @@ module.exports = {
         extensions: ['.js', '.css', '.scss']
     },
     output: {
-      path: path.resolve(__dirname, 'docs'),
-      publicPath: '/zokrates-cloud/',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/',
       filename: 'bundle.[hash].js',
     },
     plugins: [

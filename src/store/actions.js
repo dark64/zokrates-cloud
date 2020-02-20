@@ -12,7 +12,14 @@ export const onCodeChange = (code) => {
     }
 }
 
-export const onCompliation = (artifacts) => {
+export const onThemeChange = (theme) => {
+    return {
+        type: 'on_theme_change',
+        payload: theme
+    }
+}
+
+export const onCompilation = (artifacts) => {
     return {
         type: 'on_compilation', 
         payload: artifacts

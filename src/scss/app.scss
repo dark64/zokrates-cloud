@@ -23,3 +23,39 @@ body {
 pre {
     margin: 0;
 }
+
+.mr-1 {
+    margin-right: 0.25rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.mr-3 {
+    margin-right: 1rem;
+}
+
+.ml-1 {
+    margin-left: 0.25rem;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.ml-3 {
+    margin-left: 1rem;
+}
+
+.select {
+    min-width: 100px;
+    padding: 0.2rem;
+
+    &--primary {
+        background: #222629;
+        color: white;
+        border: 1px solid #222629;
+        outline: none;
+    }
+}

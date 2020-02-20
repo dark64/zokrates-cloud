@@ -2,7 +2,7 @@ import React from 'react';
 import Expandable from '../../../Expandable';
 import { useGlobalContext } from '../../../../store/StoreProvider';
 import { useConsoleContext, onMessage } from '../../../Console';
-import { onCompliation } from '../../../../store/actions';
+import { onCompilation } from '../../../../store/actions';
 
 const CompileComponent = () => {
 
@@ -18,7 +18,7 @@ const CompileComponent = () => {
                     "main", 
                     () => {}
                 );
-                globalContext.dispatch(onCompliation(artifacts));
+                globalContext.dispatch(onCompilation(artifacts));
                 consoleContext.dispatch(onMessage('success', `Compilation successful (size: ${artifacts.program.length} bytes)`));
             } catch (error) {
                 consoleContext.dispatch(onMessage('error', error.toString()));

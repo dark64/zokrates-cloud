@@ -1,5 +1,6 @@
 const initialState = {
-    code: "def main(private field a, field b) -> (field):\n\tfield result = if a * a == b then 1 else 0 fi\n\treturn result"
+    code: "def main(private field a, field b) -> (field):\n\tfield result = if a * a == b then 1 else 0 fi\n\treturn result",
+    theme: 'tomorrow'
 };
 
 const reducer = (state, action) => {
@@ -21,6 +22,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 code: action.payload
+            }
+        }
+        case 'on_theme_change': {
+            return {
+                ...state,
+                theme: action.payload
             }
         }
         default:
