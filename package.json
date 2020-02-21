@@ -34,8 +34,9 @@
   },
   "dependencies": {
     "ace-mode-zokrates": "^1.0.1",
+    "npm": "^6.13.7",
     "react-ace": "^8.0.0",
-    "react-split": "^2.0.7",
+    "react-split-pane": "^0.1.89",
     "zokrates-js": "^1.0.20"
   }
 }

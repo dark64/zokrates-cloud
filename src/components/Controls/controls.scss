@@ -2,7 +2,9 @@
 
 .controls {
     display: block;
-    min-width: 350px;
-    border-left: 1px solid #d4d6d8;
     overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    margin-left: -1px;
+    min-width: 350px;
 }

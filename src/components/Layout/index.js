@@ -1,4 +1,5 @@
 import React from 'react';
+import SplitPane from 'react-split-pane';
 import CodeEditor from '../CodeEditor';
 import { Console, ConsoleProvider } from '../Console';
 import Controls from '../Controls';
@@ -13,13 +14,13 @@ const Layout = () => {
     return (
         <ConsoleProvider preDef={[welcomeMessage]}>
             <div className="main-layout">
-                <div className="main-layout__upper">
-                    <CodeEditor />
-                    <Controls />
-                </div>
-                <div className="main-layout__lower">
+                <SplitPane split="horizontal" defaultSize="60%">  
+                    <SplitPane split="vertical" primary="second" defaultSize="25%">
+                        <CodeEditor />
+                        <Controls />
+                    </SplitPane>
                     <Console />
-                </div>
+                </SplitPane>    
             </div>
         </ConsoleProvider>
     );
