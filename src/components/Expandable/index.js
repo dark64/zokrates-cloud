@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './expandable.scss'
+import './expandable.scss';
 
 const Expandable = ({ headerText, defaultState, disabled, children }) => {
 

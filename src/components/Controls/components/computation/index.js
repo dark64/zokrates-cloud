@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Expandable from '../../../Expandable';
+import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../../../../store/StoreProvider';
+import Stopwatch from '../../../../utils/Stopwatch';
+import { onMessage, useConsoleContext } from '../../../Console';
+import Expandable from '../../../Expandable';
 import ExpandableInput from '../../../ExpandableInput';
 import TextInput from '../../../TextInput';
-import { useConsoleContext, onMessage } from '../../../Console';
-import Stopwatch from '../../../../utils/Stopwatch';
 
 const isObject = (value) => typeof value === 'object';
 
@@ -93,11 +93,13 @@ const ComputationComponent = () => {
 
     const globalContext = useGlobalContext();
     const consoleContext = useConsoleContext();
-    const disabled = globalContext.state.artifacts == undefined;
+
+    const { zokratesProvider, artifacts } = globalContext.state;
+    const disabled = artifacts == undefined;
 
     useEffect(() => {
         setState({ fields: {} });
-    }, [globalContext.state.artifacts]);
+    }, [artifacts]);
 
     const onChangeHandler = (component, value) => {
         setState({
@@ -111,17 +113,14 @@ const ComputationComponent = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const abi = JSON.parse(globalContext.state.artifacts.abi);
-        const arguments_ = abi.inputs.map(input => state.fields[input.name]);
-        consoleContext.dispatch(onMessage('info', `Executing with arguments: ${JSON.stringify(arguments_)}`));
+        const abi = JSON.parse(artifacts.abi);
+        const args = abi.inputs.map(input => state.fields[input.name]);
+        consoleContext.dispatch(onMessage('info', `Executing with arguments: ${JSON.stringify(args)}`));
 
         setTimeout(() => {
             try {
                 const stopwatch = Stopwatch();
-                const result = globalContext.state.zokratesProvider.computeWitness(
-                    globalContext.state.artifacts,
-                    arguments_
-                );
+                const result = zokratesProvider.computeWitness(artifacts, args);
                 consoleContext.dispatch(onMessage('success', `Execution successful (duration: ${stopwatch.elapsed().toFixed(2)}ms)`));
                 consoleContext.dispatch(onMessage('success', 'Output: \n' + result.output));
             } catch (error) {
@@ -131,7 +130,7 @@ const ComputationComponent = () => {
     }
 
     const renderComponents = () => {
-        const abi = JSON.parse(globalContext.state.artifacts.abi);
+        const abi = JSON.parse(artifacts.abi);
         return (
             <form onSubmit={onSubmit}>
                 {abi.inputs.map((component) => (

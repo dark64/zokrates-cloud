@@ -1,25 +1,22 @@
 import React from 'react';
-import Expandable from '../../../Expandable';
-import { useGlobalContext } from '../../../../store/StoreProvider';
-import { useConsoleContext, onMessage } from '../../../Console';
 import { onCompilation } from '../../../../store/actions';
+import { useGlobalContext } from '../../../../store/StoreProvider';
 import Stopwatch from '../../../../utils/Stopwatch';
+import { onMessage, useConsoleContext } from '../../../Console';
+import Expandable from '../../../Expandable';
 
 const CompileComponent = () => {
 
     const globalContext = useGlobalContext();
     const consoleContext = useConsoleContext();
+    const { zokratesProvider, code } = globalContext.state;
 
     const onCompile = () => {
         consoleContext.dispatch(onMessage('info', 'Compiling...'));
         setTimeout(() => {
             try {
                 const stopwatch = Stopwatch();
-                const artifacts = globalContext.state.zokratesProvider.compile(
-                    globalContext.state.code, 
-                    "main", 
-                    () => {}
-                );
+                const artifacts = zokratesProvider.compile(code, "main", () => {});
                 globalContext.dispatch(onCompilation(artifacts));
                 consoleContext.dispatch(onMessage('success', 
                     `Compilation successful (size: ${artifacts.program.length} bytes, duration: ${stopwatch.elapsed().toFixed(2)}ms)`)

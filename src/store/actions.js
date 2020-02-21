@@ -25,3 +25,10 @@ export const onCompilation = (artifacts) => {
         payload: artifacts
     }
 }
+
+export const onSetup = (keypair) => {
+    return {
+        type: 'on_setup', 
+        payload: keypair
+    }
+}

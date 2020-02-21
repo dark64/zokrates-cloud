@@ -30,6 +30,12 @@ const reducer = (state, action) => {
                 theme: action.payload
             }
         }
+        case 'on_setup': {
+            return {
+                ...state,
+                keypair: action.payload
+            }
+        }
         default:
             return state;
     }

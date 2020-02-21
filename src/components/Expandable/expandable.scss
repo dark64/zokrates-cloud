@@ -10,8 +10,10 @@
         align-items: center;
         padding: 0.5rem 0.8rem;
         background: $secondary-color;
+        border-top: 1px solid #d4d6d8;
         border-bottom: 1px solid #d4d6d8;
         font-weight: bold;
+        margin-bottom: -1px;
         cursor: pointer;
 
         &--disabled {
