@@ -34,6 +34,8 @@
   },
   "dependencies": {
     "ace-mode-zokrates": "^1.0.1",
+    "file-saver": "^2.0.2",
+    "jszip": "^3.2.2",
     "npm": "^6.13.7",
     "react-ace": "^8.0.0",
     "react-split-pane": "^0.1.89",
