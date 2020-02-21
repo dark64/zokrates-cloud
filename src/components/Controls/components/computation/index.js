@@ -75,7 +75,8 @@ const AbiInput = ({ component, value, onChange }) => {
         case 'field':
             return <TextInput prepend={component.name} value={value} onChange={onChange} />;
         case 'bool':
-            return <TextInput prepend={component.name} value={value} onChange={onChange} />;
+            return <TextInput prepend={component.name} value={value} onChange={
+                (value) => onChange(/^(true|false)$/.test(value) ? value === 'true' : value)} />;
         case 'struct':
             return <StructInput component={component} value={value} onChange={onChange} />;
         case 'array': 
