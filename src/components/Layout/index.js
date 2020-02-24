@@ -14,7 +14,7 @@ const Layout = () => {
     return (
         <ConsoleProvider preDef={[welcomeMessage]}>
             <div className="main-layout">
-                <SplitPane split="horizontal" defaultSize="60%">  
+                <SplitPane split="horizontal" primary="second" defaultSize="40%" minSize={35}>  
                     <SplitPane split="vertical" primary="second" defaultSize="25%">
                         <CodeEditor />
                         <Controls />

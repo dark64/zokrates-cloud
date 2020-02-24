@@ -15,7 +15,7 @@ const Controls = () => {
     useEffect(() => {
         initialize().then((provider) => {
             globalContext.dispatch(onLoadedProvider(provider))
-            consoleContext.dispatch(onMessage('info', 'ZoKrates initialized successfully.'));
+            consoleContext.dispatch(onMessage('info', 'ZoKrates initialized.'));
         });
     }, []);
 

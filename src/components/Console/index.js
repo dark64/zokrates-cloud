@@ -35,7 +35,7 @@ const ConsoleInner = ({ logs }) => {
             </div>
             <div className="console-container__body" ref={bodyRef}>
                 {logs && logs.map((log) => 
-                    <pre key={Math.random()}>
+                    <pre key={Math.random}>
                         <code className={`log log--${log.type}`}>
                             [{new Date().toISOString()}] {log.message}
                         </code>

@@ -28,7 +28,7 @@ const CompileComponent = () => {
     }
 
     return (
-        <Expandable headerText="Compilation" defaultState={true}>
+        <Expandable headerText="Compilation" icon="fa-refresh" defaultState={true}>
             <div className="text-group">Compiles source code into ZoKrates internal representation of arithmetic circuits.</div>
             <button className="btn btn--primary" onClick={onCompile}>
                 <i className="fa fa-refresh" aria-hidden="true"></i>Compile
