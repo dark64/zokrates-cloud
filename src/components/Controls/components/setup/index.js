@@ -31,7 +31,7 @@ const SetupComponent = () => {
         <Expandable headerText="Setup" disabled={disabled}>
             <div className="text-group">Generates a trusted setup keypair for the compiled program.</div>
             <div className="form-group">
-                <button className="btn btn--primary" onClick={onClickHandler}>
+                <button className="btn btn--secondary" onClick={onClickHandler}>
                     <i className="fa fa-cog" aria-hidden="true"></i>Generate
                 </button>
             </div>

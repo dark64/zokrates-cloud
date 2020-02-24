@@ -8,18 +8,20 @@ const Header = () => {
 
     return (
         <div className="header">
-            <div className="header__title" href="#">
-                <span className="mr-3">ZoKrates</span>
-                <select className="select select--primary" onChange={(e) => dispatch(onThemeChange(e.target.value))}>
-                    <option value="tomorrow">Tomorrow</option>
-                    <option value="textmate">TextMate</option>
-                    <option value="eclipse">Eclipse</option>
-                    <option value="chrome">Chrome</option>
-                </select>
+            <div className="header__group">
+                <span className="header__title">ZoKrates</span>
             </div>
             <div className="header__group">
-                <a className="header__link" href="https://zokrates.github.io/gettingstarted.html" target="_blank">Learn ZoKrates</a>
-                <a className="header__link" href="https://github.com/Zokrates/ZoKrates" target="_blank">
+                <div className="header__item">
+                    <select className="select select--primary" onChange={(e) => dispatch(onThemeChange(e.target.value))}>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="textmate">TextMate</option>
+                        <option value="eclipse">Eclipse</option>
+                        <option value="chrome">Chrome</option>
+                    </select>
+                </div>
+                <a className="header__item" href="https://zokrates.github.io/gettingstarted.html" target="_blank">Learn ZoKrates</a>
+                <a className="header__item" href="https://github.com/Zokrates/ZoKrates" target="_blank">
                     <i className="fa fa-github fa-2x" aria-hidden="true"></i>
                 </a>
             </div>

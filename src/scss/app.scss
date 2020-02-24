@@ -49,19 +49,20 @@ pre {
 }
 
 .select {
-    min-width: 100px;
-    padding: 0.2rem;
+    min-width: 120px;
+    padding: 0.3rem;
 
     &--primary {
-        background: #222629;
-        color: white;
-        border: 1px solid #222629;
+        background: lighten($primary-color, 5%);
+        color: $white-color;
+        border: 1px solid lighten($primary-color, 5%);
+        border-radius: 4px;
         outline: none;
     }
 }
 
 .Resizer {
-    background: #000;
+    background: #5d5d5d;
     opacity: 0.2;
     z-index: 999;
     box-sizing: border-box;

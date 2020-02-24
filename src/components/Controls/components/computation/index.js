@@ -140,7 +140,7 @@ const ComputationComponent = () => {
                         onChange={(value) => onChangeHandler(component, value)}
                     />
                 ))}
-                <button type="submit" className="btn btn--primary">
+                <button type="submit" className="btn btn--secondary">
                     <i className="fa fa-lightbulb-o" aria-hidden="true"></i>Execute
                 </button>
             </form>

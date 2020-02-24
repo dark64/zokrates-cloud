@@ -2,19 +2,19 @@
 @import '../../scss//base/typography';
 
 .header {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     color: $white-color;
     background: $primary-color;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    z-index: 2;
 
     &__title {
-        display: flex;
-        align-items: center;
         font-family: $roboto-slab;
-        font-size: 1.3rem;
-        margin-right: 1rem;     
+        font-size: 1.3rem;  
     }
 
     &__group {
@@ -22,7 +22,7 @@
         align-items: center;
     }
 
-    &__link {
+    &__item {
         text-decoration: none;
         color: inherit;
         cursor: pointer;
